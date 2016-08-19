@@ -1,0 +1,35 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "projekt",
+            "otherEntityName": "projekt",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "mitarbeiter",
+            "otherEntityName": "mitarbeiter",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nachname"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datum",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "stunden",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "typ",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160809224050",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "aufwand",
+    "pagination": "no"
+}

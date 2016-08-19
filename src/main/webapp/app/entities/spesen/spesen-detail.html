@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Spesen</span> {{vm.spesen.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Datum</span></dt>
+        <dd>
+            <span>{{vm.spesen.datum | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Posten</span></dt>
+        <dd>
+            <span>{{vm.spesen.posten}}</span>
+        </dd>
+        <dt><span>Betrag</span></dt>
+        <dd>
+            <span>{{vm.spesen.betrag}}</span>
+        </dd>
+        <dt><span>Mitarbeiter</span></dt>
+        <dd>
+            <a ui-sref="mitarbeiter-detail({id:vm.spesen.mitarbeiter.id})">{{vm.spesen.mitarbeiter.nachname}}</a>
+        </dd>
+        <dt><span>Projekt</span></dt>
+        <dd>
+            <a ui-sref="projekt-detail({id:vm.spesen.projekt.id})">{{vm.spesen.projekt.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="spesen-detail.edit({id:vm.spesen.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

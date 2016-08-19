@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Aufwand</span> {{vm.aufwand.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Datum</span></dt>
+        <dd>
+            <span>{{vm.aufwand.datum | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Stunden</span></dt>
+        <dd>
+            <span>{{vm.aufwand.stunden}}</span>
+        </dd>
+        <dt><span>Typ</span></dt>
+        <dd>
+            <span>{{vm.aufwand.typ}}</span>
+        </dd>
+        <dt><span>Projekt</span></dt>
+        <dd>
+            <a ui-sref="projekt-detail({id:vm.aufwand.projekt.id})">{{vm.aufwand.projekt.name}}</a>
+        </dd>
+        <dt><span>Mitarbeiter</span></dt>
+        <dd>
+            <a ui-sref="mitarbeiter-detail({id:vm.aufwand.mitarbeiter.id})">{{vm.aufwand.mitarbeiter.nachname}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="aufwand-detail.edit({id:vm.aufwand.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

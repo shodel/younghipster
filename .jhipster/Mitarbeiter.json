@@ -1,0 +1,28 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "vorname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nachname",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "rolle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wochenstunden",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20160809210010",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "mitarbeiter",
+    "pagination": "no"
+}

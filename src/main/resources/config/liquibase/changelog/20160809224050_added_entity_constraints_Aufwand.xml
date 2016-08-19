@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Aufwand.
+    -->
+    <changeSet id="20160809224050-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="projekt_id"
+                                 baseTableName="aufwand"
+                                 constraintName="fk_aufwand_projekt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projekt"/>
+
+        <addForeignKeyConstraint baseColumnNames="mitarbeiter_id"
+                                 baseTableName="aufwand"
+                                 constraintName="fk_aufwand_mitarbeiter_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mitarbeiter"/>
+
+    </changeSet>
+</databaseChangeLog>

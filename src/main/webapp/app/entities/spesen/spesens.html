@@ -1,0 +1,68 @@
+<div>
+    <h2>Spesens</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="spesen.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Spesen
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Datum</span></th>
+                    <th><span>Posten</span></th>
+                    <th><span>Betrag</span></th>
+                    <th><span>Mitarbeiter</span></th>
+                    <th><span>Projekt</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="spesen in vm.spesens track by spesen.id">
+                    <td><a ui-sref="spesen-detail({id:spesen.id})">{{spesen.id}}</a></td>
+                        <td>{{spesen.datum | date:'mediumDate'}}</td>
+                    <td>{{spesen.posten}}</td>
+                    <td>{{spesen.betrag}}</td>
+                    <td>
+                        <a ui-sref="mitarbeiter-detail({id:spesen.mitarbeiter.id})">{{spesen.mitarbeiter.nachname}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="projekt-detail({id:spesen.projekt.id})">{{spesen.projekt.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="spesen-detail({id:spesen.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="spesen.edit({id:spesen.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="spesen.delete({id:spesen.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

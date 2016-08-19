@@ -1,0 +1,68 @@
+<div>
+    <h2>Aufwands</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="aufwand.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Aufwand
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Datum</span></th>
+                    <th><span>Stunden</span></th>
+                    <th><span>Typ</span></th>
+                    <th><span>Projekt</span></th>
+                    <th><span>Mitarbeiter</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aufwand in vm.aufwands track by aufwand.id">
+                    <td><a ui-sref="aufwand-detail({id:aufwand.id})">{{aufwand.id}}</a></td>
+                        <td>{{aufwand.datum | date:'mediumDate'}}</td>
+                    <td>{{aufwand.stunden}}</td>
+                    <td>{{aufwand.typ}}</td>
+                    <td>
+                        <a ui-sref="projekt-detail({id:aufwand.projekt.id})">{{aufwand.projekt.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="mitarbeiter-detail({id:aufwand.mitarbeiter.id})">{{aufwand.mitarbeiter.nachname}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="aufwand-detail({id:aufwand.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aufwand.edit({id:aufwand.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aufwand.delete({id:aufwand.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
